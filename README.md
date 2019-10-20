@@ -1,4 +1,4 @@
-# ~~CheckYoSelf~~ => Noted.
+# Noted.
 
 ## Summary
 **Noted** is an to-do list web application I built in over a week. You can prioritize cards to mark them as important, and check off individual tasks off the card. The user can also filter the displaying cards by importance. The search bar will also allow you to search the title of your cards to find what you're looking for.
