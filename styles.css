@@ -2,12 +2,12 @@
   --aside-border: #eeeeee;
   --background-blue: #1f4b7b;
   --background-card-area: #ededed;
-  --background-card: #F9FDFF;
+  --background-card: rgb(255, 255, 255);
   --background-green: var(--aside-border);
-  --card-border: #C7D3D8;
+  --card-border: rgb(215, 215, 215);
   --card-text: #3C6577;
   --hover-title: #FF6A59;
-  --label: rgb(42, 88, 107);
+  --label: #2a577e;
   --urgent-active: #2a577e;
   --urgent-background: #FFE89D;
   --urgent-border-active: #FFC30C;
@@ -283,8 +283,8 @@ aside p {
 }
 
 .aside__bottom button {
-  margin-top: 25px;
-  margin-bottom: 40px;
+  margin-top: 15px;
+  margin-bottom: 18px;
 }
 
 .aside__button--orange {
@@ -549,19 +549,19 @@ footer p {
   }
 
   #prioritize {
-    margin-bottom: 40px;
+    margin-bottom: 18px;
   }
 
   /* CARD AREA section */
 
   .card__area {
-    padding: 12px;
+    padding: 10px;
     column-width: 22em;
-    padding-top: 35px;
+    padding-top: 18px;
   }
 
   article {
-    border-radius: 8px;
+    border-radius: 4px;
   }
 
   header {
