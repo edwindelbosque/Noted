@@ -1,3 +1,4 @@
+![](https://user-images.githubusercontent.com/48811985/67154028-fac19780-f2e3-11e9-93d0-1cd9c140ec8d.png)
 # Noted. : A To-do list application
 
 ## Summary
