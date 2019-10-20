@@ -140,6 +140,7 @@ aside form {
   font-weight: bold;
   height: 45px;
   width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.418);
   cursor: pointer;
   border: 0;
   border-radius: 3px;
@@ -287,17 +288,17 @@ aside p {
 }
 
 .aside__button--orange {
-  background-color: rgb(79, 144, 201);
+  background-color: rgb(196, 67, 67);
   transition: 0.15s;
 }
 
 .aside__button--orange:hover {
-  background-color: rgb(107, 172, 228);
+  background-color: rgb(216, 76, 76);
   transition: 0.15s;
 }
 
 .aside__button--orange:active {
-  background-color: rgb(79, 144, 201);
+  background-color: rgb(196, 67, 67);
   transition: 0.15s;
 }
 
