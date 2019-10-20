@@ -5,7 +5,7 @@
 
 ![](https://user-images.githubusercontent.com/48811985/67153377-9e587b00-f2d7-11e9-9d1c-e1c1edeb7632.gif)
 
-## View this application live on github pages [here](https://edwindelbosque.github.io/CheckYoSelf/) and use it on your phone!
+## View this application live on github pages [here](https://edwindelbosque.github.io/Noted./) and use it on your phone!
 
 ## Screenshots
 
