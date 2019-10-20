@@ -120,7 +120,7 @@ aside {
 }
 
 label {
-  color: var(--label);
+  color: var(--background-blue);
   font-weight: bold;
   margin: 30px 0 10px 0;
   font-size: 18px;
@@ -327,13 +327,13 @@ article {
   border: 1px solid #C7D3D8;
   margin-bottom: 1.75rem;
   width: 100%;
-  box-shadow: 0 2px 4px #00000046;
+  box-shadow: 0 2px 3px #00000046;
   border-radius: 3px;
   transition: .15s;
 }
 
 article:hover {
-  box-shadow: 0 4px 10px #0000002f;
+  box-shadow: 0 4px 6px #00000037;
   transition: 0.15s;
 }
 
@@ -354,21 +354,20 @@ h2 {
   padding-top: 3px;
   height: 33px;
   border-radius: 4px;
-  border: 2px dashed #00000000;
 }
 
 .card__main {
-  border-bottom: 2px solid var(--card-border);
-  border-top: 2px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  border-top: 1px solid var(--card-border);
   margin: 0 auto;
-  width: 99%;
+  width: 95%;
 }
 
 .card__border--yellow {
-  width: 99%;
+  width: 95%;
   margin: 0 auto;
-  border-top: 2px solid var(--urgent-border-active);
-  border-bottom: 2px solid var(--urgent-border-active);
+  border-top: 1px solid var(--urgent-border-active);
+  border-bottom: 1px solid var(--urgent-border-active);
 }
 
 ul {
@@ -386,7 +385,7 @@ article ul {
 
 article p {
   margin: 0.2rem 0;
-  font-size: 22px;
+  font-size: 20px;
   border-radius: 5px;
   border: dashed 2px #00000000;
   padding: 5px;
