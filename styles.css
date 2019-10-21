@@ -458,13 +458,17 @@ footer p {
 
 @media only screen and (max-width: 850px) {
 
-  * { 
-    -webkit-transition: none !important; 
-    -moz-transition: none !important; 
-    -o-transition: none !important; 
-    -ms-transition: none !important; 
-    transition: none !important; 
-  } 
+  input {
+    transition: none !important;
+  }
+
+  aside {
+    transition: none !important;
+  }
+
+  button {
+    transition: none !important;
+  }
 }
 
 @media only screen and (max-width: 730px) {
@@ -474,6 +478,10 @@ footer p {
   h1 {
     font-size: 55px;
     margin: 0;
+  }
+
+  aside {
+    transition: none;
   }
   
   nav {
@@ -548,7 +556,6 @@ footer p {
   }
 
   .aside__button:hover {
-    background-color: var(--background-blue);
     border: 0;
   }
 
@@ -556,6 +563,11 @@ footer p {
     height: 40px;
     width: 70px;
     font-size: 45px;
+  }
+
+  .aside__button--orange:hover {
+    background-color: rgb(216, 76, 76);
+    transition: 0.15s;
   }
 
   #prioritize {

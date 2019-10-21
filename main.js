@@ -10,7 +10,7 @@ var navBar = document.querySelector('nav');
 var sideBar = document.querySelector('aside');
 var sidebarList = document.querySelector('#list-items');
 
-var masterArray = [];
+var allIdeas = [];
 
 cardArea.addEventListener('click', handleCardArea);
 navBar.addEventListener('keyup', handleNav);
@@ -97,12 +97,12 @@ function restoreData() {
       });
     });
 
-  masterArray = recoveredData;
+  allIdeas = recoveredData;
 }
 
 function restoreDOM() {
-  for (var i = 0; i < masterArray.length; i++) {
-    displayCards(masterArray[i]);
+  for (var i = 0; i < allIdeas.length; i++) {
+    displayCards(allIdeas[i]);
   }
 }
 
@@ -127,9 +127,9 @@ function createToDoList() {
     urgent: false
   });
 
-  masterArray.push(toDoList);
+  allIdeas.push(toDoList);
   displayCards(toDoList);
-  toDoList.saveToStorage(masterArray);
+  toDoList.saveToStorage(allIdeas);
   sidebarList.innerHTML = '';
   inputTitle.value = '';
 }
@@ -192,9 +192,9 @@ function pushTasksToDom(toDoList) {
 }
 
 function updateUrgency(e) {
-  var listIndex = findIndex(retrieveId(e, 'article'), masterArray);
-  masterArray[listIndex].updateToDo(masterArray);
-  var urgent = masterArray[listIndex].urgent;
+  var listIndex = findIndex(retrieveId(e, 'article'), allIdeas);
+  allIdeas[listIndex].updateToDo(allIdeas);
+  var urgent = allIdeas[listIndex].urgent;
   urgent ? styleUrgency(e, 'add') : styleUrgency(e, 'remove')
   deleteAlertMessage();
 }
@@ -216,7 +216,7 @@ function styleUrgency(e, method) {
 function filterByUrgency() {
   cardArea.innerHTML = '';
   inputSearch.value = '';
-  var urgentArray = masterArray.filter(function (list) {
+  var urgentArray = allIdeas.filter(function (list) {
     return list.urgent === true;
   });
   buttonFilter.getAttribute('state') === "off"
@@ -243,8 +243,8 @@ function turnFilterOff() {
   buttonFilter.setAttribute('state', 'off');
   buttonFilter.classList.remove('aside__button--orange');
   buttonFilter.innerHTML = 'Filter by Urgency';
-  for (var i = 0; i < masterArray.length; i++) {
-    displayCards(masterArray[i]);
+  for (var i = 0; i < allIdeas.length; i++) {
+    displayCards(allIdeas[i]);
   }
   if (prioritize) {
     prioritize.remove()
@@ -252,13 +252,13 @@ function turnFilterOff() {
 }
 
 function filterBySearch() {
-  var urgentArray = masterArray.filter(function (list) {
+  var urgentArray = allIdeas.filter(function (list) {
     return list.urgent === true;
   });
 
   var arraySelection = buttonFilter.getAttribute('state') === "on"
     ? urgentArray
-    : masterArray;
+    : allIdeas;
   var inputSearch = document.querySelector('#input-search').value.toLowerCase();
   var matchingCards = arraySelection.filter(function (list) {
     return list.title.toLowerCase().includes(inputSearch);
@@ -271,16 +271,16 @@ function filterBySearch() {
 }
 
 function completeTask(e) {
-  var listIndex = findIndex(retrieveId(e, 'article'), masterArray);
+  var listIndex = findIndex(retrieveId(e, 'article'), allIdeas);
   var taskId = retrieveId(e, 'li');
-  var taskIndex = masterArray[listIndex].tasksArray.findIndex(function (task) {
+  var taskIndex = allIdeas[listIndex].tasksArray.findIndex(function (task) {
     return task.id === parseInt(taskId);
   })
 
-  masterArray[listIndex]
+  allIdeas[listIndex]
     .tasksArray[taskIndex]
-    .complete = !masterArray[listIndex].tasksArray[taskIndex].complete;
-  var completeStatus = masterArray[listIndex].tasksArray[taskIndex].complete
+    .complete = !allIdeas[listIndex].tasksArray[taskIndex].complete;
+  var completeStatus = allIdeas[listIndex].tasksArray[taskIndex].complete
   checkPoint(e);
   completeStatus
     ? styleCompletedTask(e, 'add')
@@ -295,8 +295,8 @@ function styleCompletedTask(e, method) {
 
 function deleteCardHandler(e) {
   var checkArray = [];
-  var listIndex = findIndex(retrieveId(e, 'article'), masterArray);
-  var tasks = masterArray[listIndex].tasksArray;
+  var listIndex = findIndex(retrieveId(e, 'article'), allIdeas);
+  var tasks = allIdeas[listIndex].tasksArray;
   deleteAlertMessage();
   for (var i = 0; i < tasks.length; i++) {
     checkArray.push(tasks[i].complete);
@@ -322,18 +322,18 @@ function deleteAlertMessage() {
 }
 
 function deleteCard(e) {
-  var listIndex = findIndex(retrieveId(e, 'article'), masterArray);
+  var listIndex = findIndex(retrieveId(e, 'article'), allIdeas);
 
-  masterArray[listIndex].deleteFromStorage(masterArray)
+  allIdeas[listIndex].deleteFromStorage(allIdeas)
   e.target.closest('article').remove();
 }
 
 function checkPoint(e) {
   var listId = retrieveId(e, 'article');
-  var list = masterArray.find(function (list) {
+  var list = allIdeas.find(function (list) {
     return list.id === parseInt(listId);
   });
-  list.saveToStorage(masterArray);
+  list.saveToStorage(allIdeas);
 }
 
 function retrieveId(e, location) {
