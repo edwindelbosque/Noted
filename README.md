@@ -6,7 +6,7 @@
 
 ![](https://user-images.githubusercontent.com/48811985/67153909-81c14080-f2e1-11e9-924d-6996e1339a6d.gif)
 
-## View this application live on github pages [here](https://edwindelbosque.github.io/Noted./) and use it on your phone!
+## View this application live on github pages [here](https://edwindelbosque.github.io/Noted/) and use it on your phone!
 
 ## Screenshots
 
